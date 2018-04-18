@@ -1,0 +1,90 @@
+body {
+  font-family: 'Open Sans';
+  font-size: 16px;
+}
+
+h1 {
+  font-family: 'Open Sans Condensed';
+  font-weight: bold;
+  font-size: 2.2em;
+}
+
+h2 {
+  font-family: 'Open Sans Condensed';
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+table {
+  width: 100%;
+  border: 1px solid #000000;
+  border-collapse: collapse;
+}
+
+td {
+  width: 100%;
+  padding: 5px 10px;
+  border-top: 1px solid #dbdbdb;
+}
+
+th {
+  padding: 5px 10px;
+  background-color: #dddddd;
+}
+
+input[type=search]{
+  -moz-appearance: none;/* older firefox */
+  -webkit-appearance: none; /* safari, chrome */
+  appearance: none; /* rest */
+  border:1px solid #dbdbdb;
+}
+
+input {
+  padding: 6px 12px;
+  margin: 6px 0;
+  font-size: 1.2em;
+}
+
+button {
+  border: none;
+  padding: 15px 32px;
+  margin: 10px 10px 10px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+hr {
+  border-top: 1px solid #555555;
+  width: 100%;
+  margin: 0;
+}
+
+tr.bold {
+  font-weight: bold;
+}
+
+.green-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.grey-button {
+  background-color: #dddddd;
+  color: #000000;
+}
+
+.new-hero-entry {
+  display:flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.new-hero-label {
+  align-self: center;
+  width: 80px;
+  text-align: right;
+  margin-right: 10px;
+}

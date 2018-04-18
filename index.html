@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <div id="app">
+    <h1 style="text-align: center">Heroes</h1>
+
+    <table>
+      <tr class="bold">
+        <th style="text-align: left">Name</th>
+        <th>Weight</th>
+        <th>Speed</th>
+        <th>Strength</th>
+      </tr>
+      <tr v-for="hero in herosComputed" v-bind:filter="filter">
+        <td>{{hero.name}}</td>
+        <td style="text-align: right">{{hero.weight}}</td>
+        <td style="text-align: right">{{hero.speed}}</td>
+        <td style="text-align: right">{{hero.strength}}</td>
+      </tr>
+      <tr class="bold">
+        <td style="text-align: right">Totals:</td>
+        <td style="text-align: right">{{ totals.weight }}</td>
+        <td style="text-align: right">{{ totals.speed }}</td>
+        <td style="text-align: right">{{ totals.strength }}</td>
+      </tr>
+    </table>
+    <div style="width: 100%; display:flex; justify-content: space-between">
+      <div>
+        <button class="grey-button" v-on:click="sortAscending">ASC Order</button>
+        <button class="grey-button" v-on:click="sortDescending">DESC Order</button>
+        <button class="grey-button" v-on:click="shuffle">Shuffle Order</button>
+      </div>
+      <div style="align-self: center">
+        Filter: <input type="search" incremental v-on:search="filterByName">
+      </div>
+    </div>
+
+    <div style="display:flex; justify-content: center">
+      <form>
+        <div style="display:flex; flex-direction: column; border-radius: 10px; background-color: #dbdbdb; padding: 0 15px 10px 15px">
+          <h2 class="new-hero-entry">New Hero</h2>
+          <hr/>
+          <div class="new-hero-entry" style="margin-top: 10px">
+            <div class="new-hero-label">
+              Name:
+            </div>
+            <input type="text" v-model="newHeroName">
+          </div>
+
+          <div class="new-hero-entry">
+            <div class="new-hero-label">
+              Weight:
+            </div>
+            <input type="number" v-model="newHeroWeight">
+          </div>
+
+          <div class="new-hero-entry">
+            <div class="new-hero-label">
+                Speed:
+            </div>
+            <input type="number" v-model="newHeroSpeed">
+          </div>
+          <div class="new-hero-entry">
+            <div class="new-hero-label">
+                Strength:
+            </div>
+            <input type="number" v-model="newHeroStrength">
+          </div>
+
+          <div class="new-hero-entry">
+            <button class="green-button" v-on:click.prevent="addHero">Add Hero</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script type="text/javascript" src="logic.js"></script>
+</body>
+</html>
